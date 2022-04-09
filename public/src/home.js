@@ -57,8 +57,7 @@ function getMostPopularBooks(books) {
 }
 
 function getMostPopularAuthors(books, authors){
-return books
-  .map((book) => {
+return books.map((book) => {
    return { name: book.title, count: book.borrows.length };
   })
   .sort((a, b) => (a.count < b.count ? 1 : -1))
@@ -82,26 +81,6 @@ function getMostPopularAuthors(books, authors) {
  return result.sort((a, b) => b.count - a.count).slice(0, 5);
 }
 
-
-module.exports = {
-  getTotalBooksCount,
-  getTotalAccountsCount,
-  getBooksBorrowedCount,
-  getMostCommonGenres,
-  getMostPopularBooks,
-  getMostPopularAuthors,
-};
-function getTotalBooksCount(books) {}
-
-function getTotalAccountsCount(accounts) {}
-
-function getBooksBorrowedCount(books) {}
-
-function getMostCommonGenres(books) {}
-
-function getMostPopularBooks(books) {}
-
-function getMostPopularAuthors(books, authors) {}
 
 module.exports = {
   getTotalBooksCount,

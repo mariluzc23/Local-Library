@@ -20,30 +20,16 @@ function partitionBooksByBorrowedStatus(books) {
 function getBorrowersForBook(book, accounts) {
   let result = [];
   let borrowArray = book.borrows;  
-  borrowArray.forEach(borrow=>{
+  borrowArray.forEach(borrow => {
     let account = accounts.find(acc => acc.id === borrow.id);
     let obj = account;
-    obj['returned'] =  borrow.returned;
+    obj['returned'] = borrow.returned;
     result.push(obj);
   })
   console.log(result);
   return result.slice(0,10);
 }
   
-
-module.exports = {
-  findAuthorById,
-  findBookById,
-  partitionBooksByBorrowedStatus,
-  getBorrowersForBook,
-};
-function findAuthorById(authors, id) {}
-
-function findBookById(books, id) {}
-
-function partitionBooksByBorrowedStatus(books) {}
-
-function getBorrowersForBook(book, accounts) {}
 
 module.exports = {
   findAuthorById,
